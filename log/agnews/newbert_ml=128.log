@@ -1,0 +1,294 @@
+nohup: ignoring input
+2023-01-17 02:29:14.426011: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-17 02:29:14.602149: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-01-17 02:29:15.133984: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
+2023-01-17 02:29:15.134093: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
+2023-01-17 02:29:15.134103: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-01-17 02:29:16.148202: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory
+2023-01-17 02:29:16.148259: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Initialize DataModule
+Vocab size: 61831
+Save data for restore
+Train size: 114000 (0: 28522, 1: 28421)
+Val size: 6000 (0: 1478, 1: 1579)
+Test size: 7600 (0: 1900, 1: 1900)
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Model state dict:
+bert.embeddings.position_ids	torch.Size([1, 512])
+bert.embeddings.word_embeddings.weight	torch.Size([30522, 768])
+bert.embeddings.position_embeddings.weight	torch.Size([512, 768])
+bert.embeddings.token_type_embeddings.weight	torch.Size([2, 768])
+bert.embeddings.LayerNorm.weight	torch.Size([768])
+bert.embeddings.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.0.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.0.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.0.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.0.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.0.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.0.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.0.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.0.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.0.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.0.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.0.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.0.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.0.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.0.output.dense.bias	torch.Size([768])
+bert.encoder.layer.0.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.0.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.1.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.1.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.1.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.1.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.1.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.1.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.1.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.1.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.1.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.1.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.1.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.1.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.1.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.1.output.dense.bias	torch.Size([768])
+bert.encoder.layer.1.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.1.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.2.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.2.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.2.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.2.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.2.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.2.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.2.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.2.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.2.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.2.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.2.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.2.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.2.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.2.output.dense.bias	torch.Size([768])
+bert.encoder.layer.2.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.2.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.3.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.3.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.3.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.3.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.3.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.3.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.3.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.3.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.3.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.3.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.3.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.3.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.3.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.3.output.dense.bias	torch.Size([768])
+bert.encoder.layer.3.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.3.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.4.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.4.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.4.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.4.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.4.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.4.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.4.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.4.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.4.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.4.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.4.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.4.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.4.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.4.output.dense.bias	torch.Size([768])
+bert.encoder.layer.4.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.4.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.5.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.5.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.5.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.5.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.5.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.5.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.5.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.5.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.5.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.5.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.5.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.5.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.5.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.5.output.dense.bias	torch.Size([768])
+bert.encoder.layer.5.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.5.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.6.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.6.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.6.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.6.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.6.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.6.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.6.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.6.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.6.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.6.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.6.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.6.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.6.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.6.output.dense.bias	torch.Size([768])
+bert.encoder.layer.6.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.6.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.7.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.7.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.7.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.7.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.7.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.7.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.7.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.7.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.7.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.7.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.7.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.7.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.7.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.7.output.dense.bias	torch.Size([768])
+bert.encoder.layer.7.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.7.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.8.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.8.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.8.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.8.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.8.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.8.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.8.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.8.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.8.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.8.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.8.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.8.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.8.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.8.output.dense.bias	torch.Size([768])
+bert.encoder.layer.8.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.8.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.9.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.9.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.9.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.9.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.9.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.9.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.9.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.9.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.9.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.9.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.9.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.9.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.9.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.9.output.dense.bias	torch.Size([768])
+bert.encoder.layer.9.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.9.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.10.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.10.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.10.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.10.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.10.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.10.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.10.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.10.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.10.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.10.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.10.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.10.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.10.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.10.output.dense.bias	torch.Size([768])
+bert.encoder.layer.10.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.10.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.11.attention.self.query.weight	torch.Size([768, 768])
+bert.encoder.layer.11.attention.self.query.bias	torch.Size([768])
+bert.encoder.layer.11.attention.self.key.weight	torch.Size([768, 768])
+bert.encoder.layer.11.attention.self.key.bias	torch.Size([768])
+bert.encoder.layer.11.attention.self.value.weight	torch.Size([768, 768])
+bert.encoder.layer.11.attention.self.value.bias	torch.Size([768])
+bert.encoder.layer.11.attention.output.dense.weight	torch.Size([768, 768])
+bert.encoder.layer.11.attention.output.dense.bias	torch.Size([768])
+bert.encoder.layer.11.attention.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.11.attention.output.LayerNorm.bias	torch.Size([768])
+bert.encoder.layer.11.intermediate.dense.weight	torch.Size([3072, 768])
+bert.encoder.layer.11.intermediate.dense.bias	torch.Size([3072])
+bert.encoder.layer.11.output.dense.weight	torch.Size([768, 3072])
+bert.encoder.layer.11.output.dense.bias	torch.Size([768])
+bert.encoder.layer.11.output.LayerNorm.weight	torch.Size([768])
+bert.encoder.layer.11.output.LayerNorm.bias	torch.Size([768])
+bert.pooler.dense.weight	torch.Size([768, 768])
+bert.pooler.dense.bias	torch.Size([768])
+classifier.weight	torch.Size([4, 768])
+classifier.bias	torch.Size([4])
+Num params: 109485316
+/home/zhangxinyu/.conda/envs/torch19/lib/python3.9/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Start training
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+/home/zhangxinyu/.conda/envs/torch19/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:2336: FutureWarning: The `pad_to_max_length` argument is deprecated and will be removed in a future version, use `padding=True` or `padding='longest'` to pad to the longest sequence in the batch, or use `padding='max_length'` to pad to a max length. In this case, you can give a specific length with `max_length` (e.g. `max_length=45`) or leave max_length to None to pad to the maximal input size of the model (e.g. 512 for Bert).
+  warnings.warn(
+Epoch 1, batch 1/3563: loss 1.5721054077148438
+Epoch 1, batch 101/3563: loss 1.3609150648117065
+Epoch 1, batch 201/3563: loss 0.8247424960136414
+Epoch 1, batch 301/3563: loss 0.526576817035675
+Epoch 1, batch 401/3563: loss 0.37211424112319946
+Epoch 1, batch 501/3563: loss 0.4887451231479645
+Epoch 1, batch 601/3563: loss 0.393774151802063
+Epoch 1, batch 701/3563: loss 0.3591992259025574
+Epoch 1, batch 801/3563: loss 0.13623757660388947
+Epoch 1, batch 901/3563: loss 0.18590450286865234
+Epoch 1, batch 1001/3563: loss 0.3454362154006958
+Epoch 1, batch 1101/3563: loss 0.23201775550842285
+Epoch 1, batch 1201/3563: loss 0.21910789608955383
+Epoch 1, batch 1301/3563: loss 0.18550792336463928
+Epoch 1, batch 1401/3563: loss 0.2167188972234726
+Epoch 1, batch 1501/3563: loss 0.2399403601884842
+Epoch 1, batch 1601/3563: loss 0.24176381528377533
+Epoch 1, batch 1701/3563: loss 0.14514385163784027
+Epoch 1, batch 1801/3563: loss 0.10974638164043427
+Epoch 1, batch 1901/3563: loss 0.2340613752603531
+Epoch 1, batch 2001/3563: loss 0.25376003980636597
+Epoch 1, batch 2101/3563: loss 0.20528705418109894
+Epoch 1, batch 2201/3563: loss 0.1636514663696289
+Epoch 1, batch 2301/3563: loss 0.2577408254146576
+Epoch 1, batch 2401/3563: loss 0.4422863721847534
+Epoch 1, batch 2501/3563: loss 0.25590845942497253
+Epoch 1, batch 2601/3563: loss 0.2750833332538605
+Epoch 1, batch 2701/3563: loss 0.22593510150909424
+Epoch 1, batch 2801/3563: loss 0.19415441155433655
+Epoch 1, batch 2901/3563: loss 0.39896124601364136
+Epoch 1, batch 3001/3563: loss 0.08460721373558044
+Epoch 1, batch 3101/3563: loss 0.07719206809997559
+Epoch 1, batch 3201/3563: loss 0.04564739763736725
+Epoch 1, batch 3301/3563: loss 0.2921006381511688
+Epoch 1, batch 3401/3563: loss 0.11772328615188599
+Epoch 1, batch 3501/3563: loss 0.26177796721458435
+Train: epoch 1, loss 0.3350161980108836
+Best epoch up to now: (1, 0.9894197513448432)
+Val: epoch 1, loss 0.9894197513448432, accuracy 0.7551666666666667
+Save model at epoch 1
+Epoch 2, batch 1/3563: loss 0.23640689253807068
+Epoch 2, batch 101/3563: loss 0.24804642796516418
+Epoch 2, batch 201/3563: loss 0.08228179812431335
+Epoch 2, batch 301/3563: loss 0.10655011981725693
+Epoch 2, batch 401/3563: loss 0.055031899362802505
+Epoch 2, batch 501/3563: loss 0.1299366056919098
+Epoch 2, batch 601/3563: loss 0.12117554992437363
+Epoch 2, batch 701/3563: loss 0.06744885444641113
+Epoch 2, batch 801/3563: loss 0.09675128012895584
+Epoch 2, batch 901/3563: loss 0.191244974732399
+Epoch 2, batch 1001/3563: loss 0.06693373620510101
+Epoch 2, batch 1101/3563: loss 0.06471852213144302
+Epoch 2, batch 1201/3563: loss 0.16031593084335327
+Epoch 2, batch 1301/3563: loss 0.05203228443861008
+Epoch 2, batch 1401/3563: loss 0.09461219608783722
+Epoch 2, batch 1501/3563: loss 0.25245898962020874
+Epoch 2, batch 1601/3563: loss 0.11515640467405319
+Epoch 2, batch 1701/3563: loss 0.09959764033555984
+Epoch 2, batch 1801/3563: loss 0.29713335633277893
+Epoch 2, batch 1901/3563: loss 0.0798894613981247
+Epoch 2, batch 2001/3563: loss 0.05933378264307976
+Epoch 2, batch 2101/3563: loss 0.07156215608119965
+Epoch 2, batch 2201/3563: loss 0.2530136704444885

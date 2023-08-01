@@ -1,0 +1,42 @@
+nohup: ignoring input
+/home/zhangxinyu/.conda/envs/torch19/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.3
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2023-06-24 16:05:20.533321: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-06-24 16:05:20.668213: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-06-24 16:05:21.307566: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
+2023-06-24 16:05:21.307659: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
+2023-06-24 16:05:21.307667: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-06-24 16:05:21.932934: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory
+2023-06-24 16:05:21.932973: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Initialize DataModule
+Vocab size: 61915
+Load pre-trained init embs from /data/xinyu/results/fgws//data/agnews/128_pretrained_init.npy
+Save data for restore
+Train size: 114000 (0: 28474, 1: 28517)
+Val size: 6000 (0: 1526, 1: 1483)
+Test size: 7600 (0: 1900, 1: 1900)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/zhangxinyu/code/fgws-main/main.py:306 in <module>                      │
+│                                                                              │
+│   303 │   │   │   )                                                          │
+│   304 │   │   else:                                                          │
+│   305 │   │   │   if config.model_type == "cnn":                             │
+│ ❱ 306 │   │   │   │   model = CNN(                                           │
+│   307 │   │   │   │   │   config, logger, pre_trained_embs=data_module.init_ │
+│   308 │   │   │   │   )                                                      │
+│   309 │   │   │   elif config.model_type == "lstm":                          │
+│                                                                              │
+│ /home/zhangxinyu/code/fgws-main/models/cnn.py:21 in __init__                 │
+│                                                                              │
+│   18 │   │                                                                   │
+│   19 │   │   if self.pre_trained_embs is not None and self.config.mode == "t │
+│   20 │   │   │   # https://discuss.pytorch.org/t/can-we-use-pre-trained-word │
+│ ❱ 21 │   │   │   self.embedding.weight.data.copy_(torch.from_numpy(self.pre_ │
+│   22 │   │   │   self.logger.log.info("Init emb with pre-trained")           │
+│   23 │   │   │                                                               │
+│   24 │   │   │   if self.config.keep_embeddings_fixed:                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: The size of tensor a (61915) must match the size of tensor b 
+(61831) at non-singleton dimension 0

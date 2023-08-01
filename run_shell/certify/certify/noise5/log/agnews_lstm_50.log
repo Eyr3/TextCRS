@@ -1,0 +1,34 @@
+2023-02-07 15:08:09.033787: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-07 15:08:09.404873: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-02-07 15:08:10.923188: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
+2023-02-07 15:08:10.923424: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
+2023-02-07 15:08:10.923460: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-02-07 15:08:12.922024: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory
+2023-02-07 15:08:12.922098: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Loading textattacknew model: LSTMForClassification
+textattacknew: load 42B.300d embedding wordlist and matrix.
+textattacknew: test set length: 7600
+Use staircase_mech: epsilon=0.1, gamma=1, sensitivity=1, random_state=1
+Certifying model on evaluation dataset.
+Traceback (most recent call last):
+  File "/home/zhangxinyu/code/fgws-main/textatk_train.py", line 150, in <module>
+    run_certify(args, model_wrapper, training_args, data_module)
+  File "/home/zhangxinyu/code/fgws-main/textatk_train.py", line 43, in run_certify
+    test.certify()
+  File "/home/zhangxinyu/code/fgws-main/textattacknew/trainer.py", line 1087, in certify
+    preds, radius = smoothed_classifier.scertify(input_texts, N0, N, alpha, self.training_args.certify_batch)
+  File "/home/zhangxinyu/code/fgws-main/textattacknew/core.py", line 54, in scertify
+    counts_selection = self._sample_noise(x, n0, batch_size)
+  File "/home/zhangxinyu/code/fgws-main/textattacknew/core.py", line 173, in _sample_noise
+    logits = self.base_classifier(input_ids)
+  File "/home/huangpeng/.conda/envs/textRS/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/zhangxinyu/code/fgws-main/textattacknew/models/helpers/lstm_for_classification.py", line 178, in forward
+    output, hidden = self.encoder(emb)
+  File "/home/huangpeng/.conda/envs/textRS/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/huangpeng/.conda/envs/textRS/lib/python3.9/site-packages/torch/nn/modules/rnn.py", line 761, in forward
+    result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+RuntimeError: CUDA out of memory. Tried to allocate 68.00 MiB (GPU 0; 23.70 GiB total capacity; 2.18 GiB already allocated; 62.81 MiB free; 2.20 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
