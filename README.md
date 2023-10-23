@@ -9,7 +9,8 @@ Coming Soon: New Updates
 
 ## Citation
 
-``` @inproceedings{zhang2023text,
+```
+@inproceedings{zhang2023text,
   title={Text-CRS: A Generalized Certified Robustness Framework against Textual Adversarial Attacks},
   author={Zhang, Xinyu and Hong, Hanbin and Hong, Yuan and Huang, Peng and Wang, Binghui and Ba, Zhongjie and Ren, Kui},
   booktitle={2024 IEEE Symposium on Security and Privacy (SP)},
