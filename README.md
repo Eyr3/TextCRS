@@ -1,12 +1,20 @@
 # TextCRS
 
-This repo is the official implementation of [Text-CRS: A Generalized Certified Robustness Framework against Textual Adversarial Attacks (IEEE S&amp;P 2024)](https://www.computer.org/csdl/proceedings-article/sp/2024/313000a053/1RjEas5x5aU).
-
-Coming Soon: New Updates
+This repository is the official implementation of [Text-CRS: A Generalized Certified Robustness Framework against Textual Adversarial Attacks (IEEE S&amp;P 2024)](https://www.computer.org/csdl/proceedings-article/sp/2024/313000a053/1RjEas5x5aU).
 
 ## Installation
 
+Our code is implemented and evaluated on pytorch.
+Install all dependencies: ```pip install -r requirements.txt'''
+
 ## Usage
+
+### Prepare the dataset
+
+
+
+### 
+
 
 ## Citation
 
