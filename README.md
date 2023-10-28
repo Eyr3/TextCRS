@@ -19,7 +19,11 @@ Textual classification datasets have been downloaded in ```/datasets```: AG’s 
 
 #### Train 
 
-First, select the noise type (e.g., ```-if_addnoise 5 or 8 or 3 or 4```), the model (e.g., ```-model_type lstm or bert or cnn```), and the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```)
+First, select training parameters.
+
+- the noise type (e.g., ```-if_addnoise 5 or 8 or 3 or 4```)
+- the model (e.g., ```-model_type lstm or bert or cnn```)
+- the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```)
 
 Then, train the smoothed classifier using the following commands:
 
@@ -63,13 +67,12 @@ sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
 
 The adversarial attack code (```./textattacknew```) has been extended from the [TextAttack project](https://github.com/QData/TextAttack/).
 
-First, select the model (e.g., ```-model_type lstm or bert or cnn```), 
+First, select the attack parameters. 
 
-the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```), 
-
-the attack type (e.g., ```-atk textfooler or swap or insert or bae_i or delete```), which corresponds to the five attacks in Table 7, 
-
-and the number of adversarial examples(e.g., ```-num_examples 500```).
+- the model (e.g., ```-model_type lstm or bert or cnn```)
+- the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```)
+- the attack type (e.g., ```-atk textfooler or swap or insert or bae_i or delete```), which corresponds to the five attacks in Table 7
+- the number of adversarial examples(e.g., ```-num_examples 500```)
 
 Then, use the following commands to generate adversarial examples:
 
