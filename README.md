@@ -4,16 +4,53 @@ This repository is the official implementation of [Text-CRS: A Generalized Certi
 
 ## Installation
 
-Our code is implemented and evaluated on pytorch.
-Install all dependencies: ```pip install -r requirements.txt'''
+Our code is implemented and evaluated on PyTorch
+Install all dependencies: ```pip install -r requirements.txt```
 
 ## Usage
 
-### Prepare the dataset
+### Prepare datasets:
+
+Textual classification datasets have been downloaded in ```/datasets```: AG’s News, Amazon, IMDB. 
+
+
+### Repeat experiments:
+
+Train smoothed classifier with different noise distribution: ```-if_addnoise 5, 8, 3, 4```
+
+1. Certified Robustness to Synonym Substitution, noise parameters: ```-syn_size 50, 100, 250``` (i.e., $s$ in Table 4).
+
+```
+python textatk_train.py -mode train -dataset imdb -model_type lstm -if_addnoise 5 -syn_size 50
+```
+
+
+2. Certified Robustness to Word Reordering, noise parameters: ```-shuffle_len 64, 128, 256``` (i.e., $2\lambda$ in Table 4).
+
+```
+python textatk_train.py -mode train -dataset imdb -model_type lstm -if_addnoise 8 -shuffle_len 256
+```
+
+3. Certified Robustness to Word Insertion, noise parameters: ```-noise_sd 0.1, 0.2, 0.3``` (i.e., $\sigma$ in Table 4).
+
+```
+python textatk_train.py -mode train -dataset agnews -model_type lstm -if_addnoise 3 -noise_sd 0.5
+```
+
+4. Certified Robustness to Word Deletion, noise parameters: ```-beta 0.3, 0.5, 0.7``` (i.e., $p$ in Table 4).
+
+```
+python textatk_train.py -mode train -dataset imdb -model_type lstm -if_addnoise 4 -beta 0.3
+```
 
 
 
-### 
+## Adversarial attacks:
+
+### Repeat experiments:
+
+The adversarial attack code (```./textattacknew```) has been extended from the [TextAttack project](GitHub: https://github.com/QData/TextAttack/).
+
 
 
 ## Citation
@@ -29,4 +66,8 @@ Install all dependencies: ```pip install -r requirements.txt'''
 }
 ```
 
-<!-- The adversarial attacks (./textattacknew) are adapted from the "TextAttack" project (GitHub: https://github.com/QData/TextAttack/) -->
+## Acknowledgement
+
+[TextAttack](https://github.com/QData/TextAttack)
+
+
