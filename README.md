@@ -54,12 +54,12 @@ First, choose the noise type (e.g., 5), the model (e.g., lstm), and the dataset 
 Then, run the corresponding certify ```.sh``` file shell script, e.g., 
 
 ```
-sh ./run_shell/certify/certify/noise5/lstm_amazon_certify.sh
+sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
 ```
 
 ## Adversarial attacks:
 
-### Generate adversarial examples:
+#### Generate adversarial examples:
 
 The adversarial attack code (```./textattacknew```) has been extended from the [TextAttack project](https://github.com/QData/TextAttack/).
 
@@ -73,7 +73,11 @@ python textatk_attack.py -model_type cnn -dataset amazon -atk textfooler -num_ex
 
 #### Certify 
 
-Use the shell command that contains _certify with ae_data_, i.e., ```-ae_data $AE_DATA```
+Use the same ```.sh``` shell file above that contains _certify with ae_data_, i.e., add the command ```-ae_data $AE_DATA```.
+
+```
+sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
+```
 
 
 ## Citation
