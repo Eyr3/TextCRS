@@ -63,12 +63,18 @@ sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
 
 The adversarial attack code (```./textattacknew```) has been extended from the [TextAttack project](https://github.com/QData/TextAttack/).
 
-First, select the model (e.g., ```-model_type lstm or bert or cnn```), the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```), the attack type (e.g., ```-atk textfooler or swap or insert or bae_i or delete or combine```), and the number of adversarial examples(e.g., ```-num_examples 500```).
+First, select the model (e.g., ```-model_type lstm or bert or cnn```), 
+
+the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```), 
+
+the attack type (e.g., ```-atk textfooler or swap or insert or bae_i or delete```), which corresponds to the five attacks in Table 7, 
+
+and the number of adversarial examples(e.g., ```-num_examples 500```).
 
 Then, use the following commands to generate adversarial examples:
 
 ```
-python textatk_attack.py -model_type cnn -dataset amazon -atk textfooler -num_examples 1000 -mode test
+python textatk_attack.py -model_type cnn -dataset amazon -atk textfooler -num_examples 500 -mode test
 ```
 
 #### Certify 
