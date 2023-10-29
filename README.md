@@ -61,7 +61,7 @@ Then, run the corresponding certify ```.sh``` file shell script, e.g.,
 sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
 ```
 
-## Adversarial attacks:
+## Adversarial attacks
 
 #### Generate adversarial examples:
 
