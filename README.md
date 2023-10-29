@@ -12,14 +12,14 @@ Install all dependencies: ```pip install -r requirements.txt```
 
 ### Prepare datasets:
 
-Textual classification datasets have been downloaded in ```/datasets```: AG’s News, Amazon, and IMDB. 
+Textual classification datasets have been downloaded in ```/datasets```: AG’s News and IMDB. 
 
 
 ### Repeat experiments:
 
 #### Train 
 
-First, select training parameters.
+Select training parameters.
 
 - the noise type (e.g., ```-if_addnoise 5 or 8 or 3 or 4```)
 - the model (e.g., ```-model_type lstm or bert or cnn```)
@@ -53,7 +53,7 @@ python textatk_train.py -mode train -dataset amazon -model_type lstm -if_addnois
 
 #### Certify 
 
-First, choose the noise type (e.g., 5), the model (e.g., lstm), and the dataset (e.g., amazon).
+Choose the noise type (e.g., 5), the model (e.g., lstm), and the dataset (e.g., amazon).
 
 Then, run the corresponding certify ```.sh``` file shell script, e.g., 
 
@@ -67,7 +67,7 @@ sh ./run_shell/certify/certify/noise4/lstm_agnews_certify.sh
 
 The adversarial attack code (```./textattacknew```) has been extended from the [TextAttack project](https://github.com/QData/TextAttack/).
 
-First, select the attack parameters. 
+Select the attack parameters. 
 
 - the model (e.g., ```-model_type lstm or bert or cnn```)
 - the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```)
