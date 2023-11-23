@@ -4,7 +4,7 @@ This repository is the official implementation of [Text-CRS: A Generalized Certi
 
 ## Installation
 
-Our code is implemented and evaluated on PyTorch.
+Our code is implemented and evaluated on Python 3.9 and PyTorch 1.11.
 
 Install all dependencies: ```pip install -r requirements.txt```
 
