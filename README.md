@@ -21,7 +21,7 @@ Textual classification datasets have been downloaded in ```/datasets```: AG’s 
 
 Select training parameters.
 
-- the noise type (e.g., ```-if_addnoise 5 or 8 or 3 or 4```)
+- the noise type (e.g., ```-if_addnoise 5 or 8 or 7 or 4```)
 - the model (e.g., ```-model_type lstm or bert or cnn```)
 - the dataset (e.g., ```-dataset amazon agnews or amazon or imdb```)
 
@@ -39,10 +39,10 @@ python textatk_train.py -mode train -dataset amazon -model_type lstm -if_addnois
 python textatk_train.py -mode train -dataset amazon -model_type lstm -if_addnoise 8 -shuffle_len 256
 ```
 
-3. Certified Robustness to Word Insertion, noise parameters: ```-noise_sd 0.1, 0.2, 0.3``` (i.e., $\sigma$ in Table 4).
+3. Certified Robustness to Word Insertion, noise parameters: ```-noise_sd 0.5, 1.0, 1.5``` (i.e., $\sigma$ in Table 4).
 
 ```
-python textatk_train.py -mode train -dataset amazon -model_type lstm -if_addnoise 3 -noise_sd 0.5
+python textatk_train.py -mode train -dataset amazon -model_type newbert -if_addnoise 7 -noise_sd 0.5
 ```
 
 4. Certified Robustness to Word Deletion, noise parameters: ```-beta 0.3, 0.5, 0.7``` (i.e., $p$ in Table 4).
