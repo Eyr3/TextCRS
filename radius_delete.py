@@ -99,7 +99,7 @@ def write_radius():
 if __name__ == '__main__':
     # model = 'bert'
     # dataset = 'agnews'
-    # sigma = 0.5
+    # sigma = 0.5  # i.e., beta
 
     for model in ['cnn']:  # ,'lstm'
         for dataset in ['amazon', 'imdb']:  # 'amazon', 'imdb'
