@@ -15,7 +15,7 @@ Install all dependencies: ```pip install -r requirements.txt```
 Textual classification datasets have been downloaded in ```/datasets```: AG’s News and IMDB. 
 
 ### Prepare adversarial examples and pre-trained matrices
-Other data can be found in the folder in Google Drive, link: [https://pan.baidu.com/s/1F7sIOmGxK-8CRWWLMV4NcQ?pwd=ul7o, extraction code: ul7o ](https://drive.google.com/file/d/1YkIDHRc2VwQizK6YTwrTWu9w6Jk3KBWV/view?usp=sharing)
+Other data can be found in the folder in Google Drive, link: https://drive.google.com/file/d/1YkIDHRc2VwQizK6YTwrTWu9w6Jk3KBWV/view?usp=sharing
 
 
 ### Repeat experiments:
