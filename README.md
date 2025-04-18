@@ -13,10 +13,10 @@ Install all dependencies: ```pip install -r requirements.txt```
 ### Prepare datasets:
 
 Textual classification datasets have been downloaded in ```/datasets```: AG’s News and IMDB. 
-It can also be downloaded in Baidu Wangpan, link: https://pan.baidu.com/s/1bQ9jGH88OwIQmXe02Seumw?pwd=nff7, extraction code: nff7
 
 ### Prepare adversarial examples and pre-trained matrices
-Other data can be found in the folder in Baidu Wangpan, link: https://pan.baidu.com/s/1F7sIOmGxK-8CRWWLMV4NcQ?pwd=ul7o, extraction code: ul7o 
+Other data can be found in the folder in Google Drive, link: [https://pan.baidu.com/s/1F7sIOmGxK-8CRWWLMV4NcQ?pwd=ul7o, extraction code: ul7o ](https://drive.google.com/file/d/1YkIDHRc2VwQizK6YTwrTWu9w6Jk3KBWV/view?usp=sharing)
+
 
 ### Repeat experiments:
 
